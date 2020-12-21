@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoreGraphV2"
         mc:Ignorable="d"
-        Title="训练成绩统计" Height="448"  Width="810">
+        Title="训练成绩统计" Height="448"  Width="810" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" Icon="Family.theme-light.ico">
     <!--<Window.Resources> 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

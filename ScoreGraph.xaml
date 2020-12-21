@@ -5,18 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoreGraphV2"
         mc:Ignorable="d"
-        Title="阶段曲线图" Height="510" Width="800">
+        Title="阶段曲线图" Height="510" Width="800" Icon="Account.theme-light.ico" ResizeMode="CanMinimize">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="377*"/>
+            <ColumnDefinition Width="297*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="近十次单科目训练成绩曲线" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Bottom"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+        <TextBlock Grid.Row="0" Text="近十次单科目训练成绩曲线" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="169.796,0,288,0" Grid.Column="1"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="51.796,0,170,0" Grid.Column="1">
             <Label Content="姓名" VerticalContentAlignment="Center" FontSize="16"/>
             <TextBox x:Name="Users_Name" Width="100" Height="20" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-            <Label Content="训练科目" VerticalContentAlignment="Center" FontSize="16"/>           
+            <Label Content="训练科目" VerticalContentAlignment="Center" FontSize="16"/>
             <ComboBox x:Name="ProjectComboBox" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="0" VerticalAlignment="Center" Width="100" >
                 <ComboBox.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -26,9 +31,9 @@
             </ComboBox>
             <Border Background="#2862AD" Height="30" Width="80" CornerRadius="2,2,2,2"  MouseLeftButtonDown="Border_MouseLeftButtonDown" Cursor="Hand" Margin="30,0,10,0">
                 <Label Content="查询" FontSize="16" Foreground="#fff" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            </Border>            
+            </Border>
         </StackPanel>
-        <Canvas Grid.Row="2">
+        <Canvas Grid.Row="2" Grid.ColumnSpan="3">
             <Button Content="柱状图" Name="ButColumn" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Width="75" Click="ButColumn_Click"/>
             <Button Content="饼状图" x:Name="ButPie" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Width="75" Click="ButPie_Click"/>
             <Button Content="折线图" x:Name="ButSpline" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" Width="75" Click="ButSpline_Click" />

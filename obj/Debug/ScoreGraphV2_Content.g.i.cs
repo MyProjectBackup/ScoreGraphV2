@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/l2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/r2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("family.theme-light.ico")]
 
 

@@ -33,10 +33,13 @@ namespace ScoreGraphV2
             GetProjectData();
         }
 
-        public ScoreGraph(string name,string project)
+        public ScoreGraph(string name, string project)
         {
             InitializeComponent();
+
             GetProjectData();
+            this.Users_Name.Text = name;
+            this.ProjectComboBox.Text = project;
             SeleteWhere(name, project);
             ButColumn_Click(null, null);
         }
@@ -104,12 +107,18 @@ namespace ScoreGraphV2
         }
         private void SeleteWhere(string Name, string Project)
         {
-            if(Name==""|| Name==null)
-            { 
+            if (Name == "" || Name == null)
+            {
                 MessageBox.Show("请输入姓名后再次查询 \n 窗口将返回到上一查询结果的柱状图！");
                 return;
             }
-                
+
+            if (Project == "汉字输入" )
+            {
+                MessageBox.Show("尚无汉字输入评分标准 \n 请回主页面查看相关详细训练数据！");
+                return;
+            }
+
             SqlCommand cmd = mycon.CreateCommand();
             string sql = string.Format("select top 10 * from tb_score where user_name='{0}' and project='{1}' order by time desc", Name, Project);
             //string sql = "select top 10 * from tb_score where user_name='B' and project='BB' order by time asc";
@@ -148,8 +157,6 @@ namespace ScoreGraphV2
                 var tempTime = Convert.ToDateTime(dt.Rows[i][4]);
                 LsTime.Add(tempTime);
             }
-
-            //ButColumn_Click(null, null);
         }
 
         public void ConnOpen()
@@ -193,7 +200,7 @@ namespace ScoreGraphV2
             //Simon.Children.Clear();
             var tempName = GetName();
             var tempProjece = GetProject();
-            string tempTitle = string.Format("{0}的近十次{1}训练成绩", tempName, tempProjece);
+            string tempTitle = string.Format("{0} 近十次 {1} 训练成绩", tempName, tempProjece);
             CreateChartColumn(tempTitle, strListx, strListy);
         }
 
@@ -202,7 +209,7 @@ namespace ScoreGraphV2
             Simon.Children.Clear();
             var tempName = GetName();
             var tempProjece = GetProject();
-            string tempTitle = string.Format("{0}的近十次{1}训练成绩", tempName, tempProjece);
+            string tempTitle = string.Format("{0} 近十次 {1} 训练成绩", tempName, tempProjece);
             CreateChartPie(tempTitle, strListx, strListy);
         }
         private void ButSpline_Click(object sender, RoutedEventArgs e)
@@ -210,7 +217,7 @@ namespace ScoreGraphV2
             Simon.Children.Clear();
             var tempName = GetName();
             var tempProjece = GetProject();
-            string tempTitle = string.Format("{0}的近十次{1}训练成绩", tempName, tempProjece);
+            string tempTitle = string.Format("{0} 近十次 {1} 训练成绩", tempName, tempProjece);
             CreateChartSpline(tempTitle, LsTime, strListy);
         }
 

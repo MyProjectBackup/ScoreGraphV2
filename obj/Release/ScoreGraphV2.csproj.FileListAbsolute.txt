@@ -1,4 +1,3 @@
-C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\ScoreGraphV2.csprojAssemblyReference.cache
 C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\CheckList.g.cs
 C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\MainWindow.g.cs
 C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\ScoreGraph.g.cs
@@ -21,3 +20,6 @@ C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\ScoreGraphV2.csproj.CoreCom
 C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\ScoreGraphV2.csproj.CopyComplete
 C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\ScoreGraphV2.exe
 C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\ScoreGraphV2.pdb
+C:\Users\admin\source\repos\ScoreGraphV2\bin\Release\MainWindow.xaml.cs
+C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\ChineseCharacterInput.g.cs
+C:\Users\admin\source\repos\ScoreGraphV2\obj\Release\ChineseCharacterInput.baml

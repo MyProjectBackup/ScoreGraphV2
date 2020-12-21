@@ -57,7 +57,7 @@
         </StackPanel>
 
         <!--#region 表格-->
-        <DataGrid x:Name="dataGrid1" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" CanUserAddRows="False" AutoGenerateColumns="False" ColumnHeaderHeight="40" Background="Transparent" SelectionMode="Single">
+        <DataGrid x:Name="dataGrid1" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" CanUserAddRows="False" AutoGenerateColumns="False" ColumnHeaderHeight="40" Background="Transparent" SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden"  >
             <!--数据网格的样式属性-->
             <DataGrid.Style>
                 <Style TargetType="DataGrid">

@@ -20,3 +20,7 @@ C:\Users\admin\source\repos\ScoreGraphV2\obj\Debug\ScoreGraph.g.cs
 C:\Users\admin\source\repos\ScoreGraphV2\bin\Debug\WPFVisifire.Charts.dll
 C:\Users\admin\source\repos\ScoreGraphV2\obj\Debug\ScoreGraph.baml
 C:\Users\admin\source\repos\ScoreGraphV2\obj\Debug\ScoreGraphV2.csproj.CopyComplete
+C:\Users\admin\source\repos\ScoreGraphV2\bin\Debug\MainWindow.xaml.cs
+C:\Users\admin\source\repos\ScoreGraphV2\obj\Debug\ChineseCharacterInput.g.cs
+C:\Users\admin\source\repos\ScoreGraphV2\obj\Debug\ChineseCharacterInput.baml
+C:\Users\admin\source\repos\ScoreGraphV2\obj\Debug\ScoreGraphV2.csprojAssemblyReference.cache

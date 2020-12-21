@@ -203,7 +203,7 @@ namespace ScoreGraphV2
                 SetCurrentPage((Currentpage + 1).ToString());
                 Paging(pageRecord, ++Currentpage);
             }
-        }      
+        }
 
         public void ConnOpen()
         {
@@ -302,7 +302,7 @@ namespace ScoreGraphV2
             List<UsersScore> lus1 = new List<UsersScore>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                lus1.Add(new UsersScore { Id = Convert.ToInt32(dt.Rows[i][0]), Name = dt.Rows[i][1].ToString(), Project = dt.Rows[i][2].ToString(), Score = dt.Rows[i][3].ToString() });
+                lus1.Add(new UsersScore { Id = Convert.ToInt32(dt.Rows[i][0]), Name = dt.Rows[i][1].ToString(), Project = dt.Rows[i][2].ToString(), Score = dt.Rows[i][3].ToString(), Time = Convert.ToDateTime(dt.Rows[i][4]) });
             }
             return lus1;
             //this.dataGrid1.ItemsSource = lus1;
@@ -355,7 +355,7 @@ namespace ScoreGraphV2
             List<UsersScore> lus1 = new List<UsersScore>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                lus1.Add(new UsersScore { Id = Convert.ToInt32(dt.Rows[i][0]), Name = dt.Rows[i][1].ToString(), Project = dt.Rows[i][2].ToString(), Score = dt.Rows[i][3].ToString() });
+                lus1.Add(new UsersScore { Id = Convert.ToInt32(dt.Rows[i][0]), Name = dt.Rows[i][1].ToString(), Project = dt.Rows[i][2].ToString(), Score = dt.Rows[i][3].ToString(), Time = Convert.ToDateTime(dt.Rows[i][4]) });
             }
             this.dataGrid1.ItemsSource = lus1;
         }
@@ -402,7 +402,7 @@ namespace ScoreGraphV2
             List<UsersScore> lus1 = new List<UsersScore>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                lus1.Add(new UsersScore { Id = Convert.ToInt32(dt.Rows[i][0]), Name = dt.Rows[i][1].ToString(), Project = dt.Rows[i][2].ToString(), Score = dt.Rows[i][3].ToString() });
+                lus1.Add(new UsersScore { Id = Convert.ToInt32(dt.Rows[i][0]), Name = dt.Rows[i][1].ToString(), Project = dt.Rows[i][2].ToString(), Score = dt.Rows[i][3].ToString(), Time = Convert.ToDateTime(dt.Rows[i][4]) });
             }
             this.dataGrid1.ItemsSource = lus1;
 
@@ -432,7 +432,7 @@ namespace ScoreGraphV2
             {
                 MessageBox.Show(ex.Message);
             }
-        }       
+        }
 
         // 删除一条数据
         private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -459,7 +459,7 @@ namespace ScoreGraphV2
         private UsersScore SubRowsId()
         {
             return (UsersScore)dataGrid1.SelectedItem;
-        }  
+        }
 
         private DataRowView GetSelectedRow()
         {
@@ -482,10 +482,21 @@ namespace ScoreGraphV2
                 GetSelectedRow();
                 var name = SubRowsId().Name;
                 var project = SubRowsId().Project;
-                ScoreGraph uu = new ScoreGraph(name, project);
-                uu.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                uu.Show();
-                uu.Activate();
+
+                if (project == "汉字输入")
+                {
+                    ChineseCharacterInput c = new ChineseCharacterInput(name);
+                    c.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    c.Show();
+                    c.Activate();
+                }
+                else
+                {
+                    ScoreGraph uu = new ScoreGraph(name, project);
+                    uu.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    uu.Show();
+                    uu.Activate();
+                }
             }
         }
     }
